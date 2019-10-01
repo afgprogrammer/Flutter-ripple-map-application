@@ -16,5 +16,5 @@ In this video we use, Flutter Animation, Animator, Ripple, ListView, Transition,
 
 ## ScreenShot
 
-<img src="assets/screenshot/preview1.png" height="500em" /><img src="assets/screenshot/two.png" height="preview2" />
+<img src="assets/screenshot/preview1.png" height="500em" /><img src="assets/screenshot/preview2.png" height="preview2" />
 
