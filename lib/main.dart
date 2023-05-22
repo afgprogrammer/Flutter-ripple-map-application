@@ -1,6 +1,6 @@
 import 'package:animator/animator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:avatar_glow/avatar_glow.dart';
 
 void main() => runApp(
   MaterialApp(
@@ -59,40 +59,52 @@ class _HomePageState extends State<HomePage> {
               )
             ),
           ),
-          makePoint(top: 140.0, left: 40.0),
-          makePoint(top: 190.0, left: 190.0),
-          makePoint(top: 219.0, left: 60.0),
+          makePoint(top: 300.0, left: 200.0, image: 'assets/images/place.jpg' ),
+          makePoint(top: 450.0, left: 50.0, image: 'assets/images/place3.jpg'),
+          makePoint(top: 400.0, left: 160.0, image: 'assets/images/place2.jpg'),
         ],
       )
     );
   }
 
-  Widget makePoint({top, left}) {
+  Widget makePoint({top, left, image}) {
     return Positioned(
       top: top,
       left: left,
-      child: Container(
-        width: 20,
-        height: 20,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.blue.withOpacity(0.3)
-        ),
-        child: Animator<double>(
-          duration: Duration(seconds: 1),
-          tween: Tween<double>(begin: 4.0, end: 6.0),
-          cycles: 0,
-          builder: (anim) => Center(
-            child: Container(
-              margin: EdgeInsets.all(anim.value),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.blue
-              ),
-            ),
+      child: AvatarGlow(
+        endRadius: 50,
+        animate: true,
+        glowColor: Colors.yellow,
+        child:  Container(
+          width: 20,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.yellow
           ),
         )
-      ),
+      )
+      // child: Container(
+      //   width: 40,
+      //   height: 40,
+      //   decoration: BoxDecoration(
+      //     shape: BoxShape.circle,
+      //     color: Colors.yellow.withOpacity(0.3)
+      //   ),
+      //   child: Animator<double>(
+      //     duration: Duration(seconds: 2),
+      //     tween: Tween<double>(begin: 13.0, end: 10.0),
+      //     cycles: 0,
+      //     builder: (anim) => Center(
+      //       child: Container(
+      //         margin: EdgeInsets.all(anim.value),
+      //         decoration: BoxDecoration(
+      //           shape: BoxShape.circle,
+      //           color: Colors.yellow
+      //         ),
+      //       ),
+      //     ),
+      //   )
+      // ),
     );
   }
 
