@@ -23,8 +23,9 @@ class _HomePageState extends State<HomePage> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/background.jpg'),
-                fit: BoxFit.cover
+                image: AssetImage('assets/images/background3.jpg'),
+                fit: BoxFit.cover,
+                alignment: Alignment.bottomCenter
               )
             ),
             child: Container(
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     Container(
-                      height: 250,
+                      height: 230,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
@@ -72,14 +73,16 @@ class _HomePageState extends State<HomePage> {
       top: top,
       left: left,
       child: AvatarGlow(
-        endRadius: 50,
+        endRadius: 40,
+        curve: Curves.linear,
         animate: true,
-        glowColor: Colors.yellow,
+        repeatPauseDuration: Duration(milliseconds: 500),
+        glowColor: Colors.green.shade300,
         child:  Container(
-          width: 20,
+          width: 16,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.yellow
+            color: Colors.green.shade700
           ),
         )
       )
@@ -110,19 +113,20 @@ class _HomePageState extends State<HomePage> {
 
   Widget makeItem({image}) {
     return AspectRatio(
-      aspectRatio: 1.7 / 2,
+      aspectRatio: 1.9 / 2,
       child: Container(
         margin: EdgeInsets.only(right: 20),
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colors.white
+          color: Colors.grey.shade900
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
                   width: 60,
@@ -139,14 +143,14 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: Colors.grey[200]
+                    color: Colors.black26
                   ),
                   child: Text('2.1 mi', style: TextStyle(color: Colors.grey[500]),)
                 )
               ],
             ),
             SizedBox(height: 30,),
-            Text('Golde Gate Bridge', style: TextStyle(color: Colors.grey[800], fontSize: 25, fontWeight: FontWeight.bold),),
+            Text('Golden Gate Bridge', style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),),
             SizedBox(height: 10,),            
             Align(
               alignment: Alignment.bottomRight,
